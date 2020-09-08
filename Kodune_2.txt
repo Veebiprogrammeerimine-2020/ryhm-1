@@ -1,0 +1,14 @@
+Teise koduse tööna tuleb ikka juba natuke ka programmeerida.
+
+Tunnis alustasime home.php failis kellaaja järgi päeva osadele hinnangu andmist (lihtsalt aeg, uneaeg jne).
+Tehke see lõpuni, jagage päev vähemalt viieks osaks!
+
+Tunnis leidsime ka semestri pikkuse päevades (kasutasime semestri alguse ja lõpu erinevust ning selle erinevuse väärtuse vormindasime (format) päevadena).
+Sama moodi leidke, mitu päeva on möödunud semestri algusest (tänase väärtuse juba leidsime - new DateTime("now")  ). Vormindage see päevade arvuna.
+Nüüd saate IF lausetega vaadata, kas äkki on tänase ja semestri alguse erinevus negatiivne - siis pole ju semester veel peale hakanud.
+Kui tänaseks on rohkem päevi, kui semesri pikkus, siis on semester lõpenud. Muudel juhtudel on semester täies hoos.
+
+Väljastage se info semestri kohta ka meie veebilehel.
+Lisaks andke teada, mitu % on semestri õppetööst tehtud (kui pole semester veel alanud, siis on 0% ja kui semester läbi saab, siis 100%, mitte rohkem). Väljastage see veebilehel!
+
+Kodune töö peab olema loomulikult greeny serveris tehtud aga laetud ka github'i!
