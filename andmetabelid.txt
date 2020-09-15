@@ -1,0 +1,2 @@
+ideed
+CREATE TABLE `if20_rinde_1`.`myideas` ( `id_myideas` INT(4) NOT NULL AUTO_INCREMENT , `idea` VARCHAR(256) NOT NULL , `deleted` DATETIME NULL , PRIMARY KEY (`id_myideas`)) ENGINE = InnoDB;
