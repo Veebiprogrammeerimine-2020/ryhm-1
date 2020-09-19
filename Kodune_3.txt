@@ -1,0 +1,19 @@
+Kolmanda koduse tööna tuleb oma lehel teha järgmised muudatused:
+
+1) Kataloogist vp_pics automaatselt loetud piltidest tuleb näitamiseks valida välja üks juhuslik (mitte kõiki näidata). Selleks tuleb loosida üks juhuslik arv vahemikus 0 ... (piltide arv -1) ehk siis, kui on 4 pilti, siis juhuslik number 0 ... 3 sest massiivis on piltide numbrid 0, 1, 2, 3.
+Juhusliku arvu jaoks on funktsioon rand()
+See annab juhusliku arvu piirides 0 ... 1
+Saab anda parameetreid, millga määratakse ka miinimum ja maksimum ning sel juhul juba täisarvudena
+rand(0, 3)
+Natuke kiiremaks loetakse funktsiooni mt_rand().
+Ehk siis näiteks:
+$picnum = mt_rand(0, ($piccount - 1));
+Seejärel tuleb juba ringi teha piltide näitamiseks mõeldud html-i koostamine ning teha kood vaid ühe pildi jaoks.
+
+2) Teha ringi lehe avamise hetke näitamine. Vaja on seda näidata kujul: nädalapäev, kuupäev, kuu Eesti keeles, aasta, kellaaeg (näiteks: esmaspäev, 21. september 2020, kell 8:33:21
+Selleks tuleb muuta aja küsimist ning kasutada kuu nimede massiivi.
+
+3) Jagage home.php kolmeks eraldi leheks. Senine leht jääb avaleheks, millel on aja, semestri kulgemise info ning juhuslik foto. Lisaks lingid kahele eraldi mõtetega seotud lehele. Esimene peab olema leht, millel saab ainult mõtteid sisestada, ei midagi muud. Teisel saab ainult näha seniseid sisestatud mõtteid. Mõlemal peab olema link avalehele (home.php) tagasi liikumiseks.
+Lingid on kujul: <a href="soovitudlehefailinimi.php">See leht</a>
+
+Ongi kõik! Jõudu!
