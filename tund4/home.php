@@ -97,7 +97,8 @@
     <li><a href="addideas.php">Lisa oma mõte</a></li>
 	<li><a href="listideas.php">Loe varasemaid mõtteid</a></li>
 	<li><a href="listfilms.php">Loe filmiinfot</a></li>
-	</ul>
+	<li><a href="addfilms.php">Filmiinfo lisamine</a></li>
+  </ul>
   
   <p>Lehe avamise hetk: <?php echo $weekdaynameset[$weekdaynow - 1] .", " .$fulltimenow; ?>.</p>
   <p><?php echo "Praegu on " .$partofday ."."; ?></p>

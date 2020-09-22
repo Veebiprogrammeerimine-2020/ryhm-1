@@ -3,7 +3,7 @@
   //var_dump($GLOBALS);
   //funktsioo, mis loeb kõikide filmide info
   function readfilms(){
-  $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+    $conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
 	  //$stmt = $conn->prepare("SELECT pealkiri, aasta, kestus, zanr, tootja, lavastaja FROM film");
 	  $stmt = $conn->prepare("SELECT * FROM film");
 	  echo $conn->error;
@@ -29,3 +29,15 @@
 	  $conn->close();
 	  return $filmhtml;
   }//readfilms lõppeb
+  
+  function savefilm($titleinput, $yearinput, $durationinput, $genreinput, $studioinput, $directorinput){
+	$conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
+	$stmt = $conn->prepare("INSERT INTO film (pealkiri, aasta, kestus, zanr, tootja, lavastaja) VALUES(?,?,?,?,?,?)");
+	echo $conn->error;
+	$stmt->bind_param("siisss", $titleinput, $yearinput, $durationinput, $genreinput, $studioinput, $directorinput);
+	$stmt->execute();
+	$stmt->close();
+	$conn->close();
+  }//savefilm lõppeb
+  
+  
