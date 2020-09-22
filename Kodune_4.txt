@@ -1,0 +1,34 @@
+Neljanda koduse ülesandena tuleb luua uus leht (lisage loomulikult link ka avalehele (home.php)), millel saab luua uue kasutaja.
+
+Olemas peavad olema sisendid:
+* Eesnimi (firstnameinput) tüüp "text"
+* Perekonnanimi (lastnameinput) tüüp "text"
+* Sugu (genderinput) tüüp "radio", neid tegelikult 2 tükki, esimene näiteks meessoo märkimiseks, teine naissoo märkimiseks.
+Näiteks:
+<input type="radio" name="genderinput" id="gendermale" value="1"><label for="gendermale">Mees</label>
+Siin pange tähele, et nii nais- kui ka meessoo märkimise raadionupul on sama atribuut name väärtus (name="genderinput"). Erinev on väärtus (value), mis ühel juhul olgu 1, teisel juhul 2. Sildid "mees" ja "naine" lisage <label> elemendiga. VÄGA OLULINE: atribuut id peab neil olema erineva väärtusega sest id peab olema UNIKAALNE!!!
+
+*E-posti aadress kasutajatunnuseks (emailinput), tüüp "email"
+*Salasõna (passwordinput), tüüp "password"
+*Salasõna teist korda (passwordsecondaryinput), tüüp "password"
+
+Iga sisendi kohta peab kasutama oma muutujat võimaliku vea kohta (pole kirja pandud vms), näiteks $firstnameerror=""
+Loomulikult on nende muutujate väärtusteks esialgu tühjus.
+
+Iga sisendi (input) kõrvale lisage üks element <span></span>, mille sisse saate php abil just seda error muutuja väärtust näidata!
+
+Salasõna pikkuse kontrollimiseks: if(strlen($_POST["passwordinput"]) < 8)
+
+Kui andmete sisestamisel midagi unustada või liiga lühike salasõna sisestada vms, siis oleks ilus kasutaja jaoks eelnevalt korrektselt sisestatud info meeles pidada ja sisestusväljadel näidata. Ainult salasõna ei ole hea niiviisi meelde jätta.
+
+Seega on koos error muutujatega kohe ilus ka info enda väärtuste hoidmise muutujad valmis teha, mis esialgu saavad väärtuseks tühjuse. Näiteks $firstname="", $lastname="" jne. Kui on submit nuppu klikitud, siis kontrollitakse väärtuseid ja antakse korrektsed väärtused neile muutujatele. Igale sisendile (välja arvatud soo valimise raadionupud) saab lisada atribuudi value, mille väärtuseks oleks php abil just selle muutuja väärtus.
+Näiteks:
+<input name="firstnameinput" id="firstname" type="text" value="<?php echo $firstname; ?>">
+
+Raadionuppude puhul tuleb varem valitud väärtuseg araadionupule lisada atribuut "checked". See on selline imelik, et ta ongi vaid see üks sõna, pole võrdusmärki ega väärtust.
+Näiteks:
+<input type="radio" name="gender" id="gendermale" value="1" <?php if($gender == "1"){echo " checked";}?>>
+
+Tehke valmis leht, kontrollige sisestust ja kui kõk error muutujad on pärast kontrolli ikka tühjad (kontrollite empty() funktsiooniga ja kasutate "and" loogikatehet tingimuste vahel), siis tohib kasutajat salvestama hakata! Salvestamist ennast ei ole vaja teha ning andmetabelit ka mitte!
+
+Jõudu tööle! 
