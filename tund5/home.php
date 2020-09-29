@@ -67,7 +67,7 @@
   
   //paneme juhusliku pildi ekraanile
   $piccount = count($picfiles);
-
+  $imghtml = "";
   $imghtml .= '<img src="../vp_pics/' .$picfiles[mt_rand(0, ($piccount - 1))] .'" ';
   $imghtml .= 'alt="Tallinna Ülikool">';
   require("header.php");
