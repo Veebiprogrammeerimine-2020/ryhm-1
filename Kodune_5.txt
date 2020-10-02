@@ -1,0 +1,18 @@
+Seekordne kodutöö on peaasjalikult kordamine.
+
+1) Looge lehest home.php koopia, nimeks page.php
+See uus leht saab olema meie lehestiku avaleht, kuhu kõik kasutajad kõigepealt "satuvad".
+Lehele page.php jäävad esimestel tundidel tehtud ajaga seotud asjad (kellaaeg, semestri kulgemine), juhuslik pilt ning link uue kasutaja loomiseks. Kõrvaldada tuleks muutujas $username hoitav kasutaja (Teie enda) nimi. See leht peaks olema anonüümne.
+
+2) Samuti peaks olema anonüümne ka uue kasutaja loomise leht.
+
+3) Lehele home.php peavad jääma lingid teistele lehtedele. See leht hakkab olems sisseloginud kasutaja avaleht.
+
+4) lehele page.php lisage vorm sisselogimiseks. Kasutage valideerimist nagu tunnis tegime. Sisselogimiseks vaja kasutajatunnust, salasõna ja sisselogimise nuppu. Kontrollige, kas sisestati sisselogimiseks vajalikud andmed (ka salasõna pikkus min 8 märki) ja kui on korras - käivitages sisselogimise funktsioon.
+
+5) uue osana täiendage uue kasutaja loomise aga ka sisselogimise andmete valideerimise osa sisestatud e-maili korrektse kontrollimisega. Selleks leiab õpetusi näiteks:
+https://supunkavinda.blog/php/input-validation-with-php
+https://www.php.net/manual/en/filter.filters.validate.php
+https://www.w3schools.com/php/php_filter.asp
+
+Edu!
