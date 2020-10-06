@@ -36,7 +36,7 @@
   
   <hr>
   
-  <form method="POST">
+  <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <label for="titleinput">Filmi pealkiri</label>
 	<input type="text" name="titleinput" id="titleinput" placeholder="Pealkiri">
 	<br>

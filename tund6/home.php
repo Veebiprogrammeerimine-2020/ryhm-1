@@ -13,6 +13,7 @@
 	<li><a href="listideas.php">Loe varasemaid mõtteid</a></li>
 	<li><a href="listfilms.php">Loe filmiinfot</a></li>
 	<li><a href="addfilms.php">Filmiinfo lisamine</a></li>
+	<li><a href="userprofile.php">Minu kasutajaprofiil</a></li>
   </ul>
   
   

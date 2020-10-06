@@ -34,7 +34,7 @@
   </ul>
   
   <hr>
-  <form method="POST">
+  <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
     <label>Sisesta oma pähe tulnud mõte!</label>
 	<input type="text" name="ideainput" placeholder="Kirjuta siia mõte!">
 	<input type="submit" name="ideasubmit" value="Saada mõte ära!">
