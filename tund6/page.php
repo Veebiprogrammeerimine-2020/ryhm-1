@@ -1,8 +1,11 @@
 <?php
+  //käivitan sessiooni
+  session_start();
   //$username = "Andrus Rinde";
   require("../../../../config_vp2020.php");
   require("fnc_common.php");
   require("fnc_user.php");
+  
   $fulltimenow = date("d.m.Y H:i:s");
   $hournow = date("H");
   $partofday = "lihtsalt aeg";
@@ -75,7 +78,6 @@
   $imghtml .= 'alt="Tallinna Ülikool">';
   
   $email = "";
-  
   $emailerror = "";
   $passworderror = "";
   $notice = "";
@@ -109,7 +111,7 @@
   require("header.php");
 ?>
   <img src="../img/vp_banner.png" alt="Veebiprogrammeerimise kursuse bänner">
-  <h1>Äge veebisüsteem</h1>
+  <h1>Veebiprogrammeerimine 2020</h1>
   <p>See veebileht on loodud õppetöö kaigus ning ei sisalda mingit tõsiseltvõetavat sisu!</p>
   <p>See konkreetne leht on loodud veebiprogrammeerimise kursusel aasta 2020 sügissemestril <a href="https://www.tlu.ee">Tallinna Ülikooli</a> Digitehnoloogiate instituudis.</p>
   
