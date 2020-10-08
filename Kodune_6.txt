@@ -1,0 +1,26 @@
+Kuuenda nädala kodune töö on seotud andmeaaside projekteerimise kursusel loodava filmide andmebaasiga.
+Seal on mitmeid tabeleid, milledes olevat infot saab siduda.
+Ülesandeks on luua oma lehestikku uus leht, millel saab luua seoseid erinevate andmete vahel.
+Näiteks võiks luua seoseid filmide ja žanrite vahel. Aga ka filmide ja stuudiote (production company) vahel või filmide ja isikute vahel, kus võiks ikka ka isiku rolli (position) arvestada ehk siis seos kolme taeli vahel.
+Lisasin siia github'i ka Inga Petuhhovi jagatud andmebaasi diagrammi (Filmide andmebaasi_diagramm.png).
+
+Seega valite ühe seose loomise.
+
+Lehele tuleb luua vorm, milles on rippmenüüd seostatavate objektide valimiseks. Näiteks üks rippmenüü filmide pealkirjadega, teine rippmenüü aga filmide žanritega. Kasutaja valib filmi ja žanri ning klõpsab nuppu (submit) seose salvestamiseks.
+
+Rippmenüüde loomiseks tuleb vastavatest andmetabelitest sisse lugeda vajalikud andmed, näiteks filmide puhul nende id ja pealkiri. Seejärel luua <select> element, mille valikud (<option>) saavad väärtuseks id ja inimesele näidatavaks sisuks filmi pealkirja, žanri nimetuse vms.
+
+Näiteks sellisel kujul:
+
+<label for="filminput">Film: </label>
+<select name="filminput" id="filminput">
+	<option value="" selected disabled>Vali film</option>
+	<option value="1">Kevade</option> 
+	<option value="2">Suvi</option>
+	<option value="3">Sügis</option> 
+	<option value="4">Mehed ei nuta</option>
+</select>
+
+Need <option> elemendid, kus on tegelik sisu, need siis tuleb lua tsükliga andmetabelist lugedes.
+
+Edu!
