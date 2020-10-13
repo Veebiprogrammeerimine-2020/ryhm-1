@@ -3,6 +3,9 @@
   require("../../../../config_vp2020.php");
   require("fnc_filmrelations.php");
   
+  $sortby = 0;
+  $sortorder = 0;
+  
   require("header.php");
 ?>
   <h1><?php echo $_SESSION["userfirstname"] ." " .$_SESSION["userlastname"]; ?></h1>
@@ -15,7 +18,17 @@
   </ul>
   
   <hr>
-  <?php echo readpersonsinfilm(); ?>
+  <?php 
+	if(isset($_GET["sortby"]) and isset($_GET["sortorder"])){
+		if($_GET["sortby"] >= 1 and $_GET["sortby"] <= 4){
+			$sortby = $_GET["sortby"];
+		}
+		if($_GET["sortorder"] == 1 or $_GET["sortorder"] == 2){
+			$sortorder = $_GET["sortorder"];
+		}
+	}
+	echo readpersonsinfilm($sortby, $sortorder);
+  ?>
 </body>
 </html>
 
