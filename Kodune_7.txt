@@ -1,0 +1,8 @@
+Seekord on Teil vaja koostöös teistega (kahe, kolme ehk võib-olla ka nelja kaupa) lõpuni arendada veebipõhine kasutajaliides filmide andmebaasile, mida "Andmebaaside projekteerimine" kursusel olete loonud.
+Seega:
+1) Lisada vahendid kõigi seoste loomiseks (mina tegin kodutööna seitsmendaks tunniks filmide ja žanrite seoste loomise, tunnis lisasime tootja/stuudio seose). Olemas peavad olema veel "person_in_movie" ja ka "quote". Lisamisel tuleb kontrollida, ega sellist seost juba olemas pole!
+2) Lisada vahendid kõikide andmete sisestamiseks ("person", "movie", "position", "genre", "production company"). Osalt kuulub ka "quote" siia. Lisamisel peab kontrollima ega täpselt sellist kirjet juba lemas pole!
+3) Lisada vahendid andmete näitamiseks. Kindlasti soovin näha tsitaate ("quote"), koos isikuga, mis rollis, mis filmis.
+Esitatavaid andmeid peab saama kõikide "veergude" järgi sorteerida.
+
+Jõudu!
