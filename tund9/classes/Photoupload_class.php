@@ -71,6 +71,19 @@
 			imagecopyresampled($this->mynewtempimage, $this->mytempimage, 0, 0, $cutx, $cuty, $neww, $newh, $cutsizew, $cutsizeh);
 		}
 		
+		public function addWatermark($wmfile){
+			if(isset($this->mynewtempimage)){
+				$watermark = imagecreatefrompng($wmfile);
+				$wmw = imagesx($watermark);
+				$wmh = imagesy($watermark);
+				$wmx = imagesx($this->mynewtempimage) - $wmw - 10;
+				$wmy = imagesy($this->mynewtempimage) - $wmh - 10;
+				//kopeerime vesimärgi vähendatud pildile
+				imagecopy($this->mynewtempimage, $watermark, $wmx, $wmy, 0, 0, $wmw, $wmh);
+				imagedestroy($watermark);
+			}
+		}
+		
 		public function saveimage($target){
 			$notice = null;
 			if($this->photofiletype == "jpg"){

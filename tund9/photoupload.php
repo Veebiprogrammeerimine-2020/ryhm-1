@@ -13,6 +13,7 @@
   $photouploaddir_orig = "../photoupload_orig/";
   $photouploaddir_normal = "../photoupload_normal/";
   $photouploaddir_thumb = "../photoupload_thumb/";
+  $watermark = "../img/vp_logo_w100_overlay.png";
   $filenameprefix = "vp_";
   $filename = null;
   $photomaxwidth = 600;
@@ -65,6 +66,8 @@
 		$myphoto = new Photoupload($_FILES["photoinput"], $filetype);
 		//teeme pildi väiksemaks
 		$myphoto->resizePhoto($photomaxwidth, $photomaxheight, true);
+		//lisame vesimärgi
+		$myphoto->addWatermark($watermark);
 		//salvestame vähendatud pildi
 		$result = $myphoto->saveimage($photouploaddir_normal .$filename);
 		if($result == 1){
