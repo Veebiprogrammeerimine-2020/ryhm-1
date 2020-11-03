@@ -1,6 +1,15 @@
 <?php
   require("usesession.php");
   
+  //klassi testimine
+  //require("classes/First_class.php");
+  //$myclassobject = new First(10);
+  //echo " Salajane arv on: " .$myclassobject->mybusiness;
+  //echo " Avalik arv on: " .$myclassobject->everybodysbusiness;
+  //$myclassobject->tellMe();
+  //unset($myclassobject);
+  //echo " Avalik arv on: " .$myclassobject->everybodysbusiness;
+  
   require("header.php");
 ?>
   
