@@ -1,0 +1,29 @@
+Eelmisle nädalal läks koduse ülesandega kehvasti - jäi välja kuulutamata. Sel nädalal aga ...
+
+Tunnis alustatud Photoupload klassi tuleb edasi arendada.
+
+Põhimõtteliselt peaks veebilehele photoupload.php jääma vorm, vormi sisestatud info olemasolu kontroll (isset) ning kogu fotoga seotud tegevus peaks olema klassis.
+
+Seega tuleb klassi tõsta:
+* kontroll, kas on üldse pilt.
+	Soovitaksin selleks vastavale public funktsioonile edastada massiiv, millega saab määrata, milliseid failitüüpe lubatakse. Näiteks:
+	$photoFileTypes = ["image/jpeg", "image/png", "image/gif"];
+	Loomulikult ei pea kõiki kolme failitüüpi lubama. Nii saab selle kontrolli paindlikumaks.
+	Kuna pildi suuruse küsimisel saab ka mime tüübi kätte, siis saame kontrollida, kas kontrollitava faili mime tüüp on antud lubatud failitüüpide massiivis olemas:
+		$fileInfo = getImagesize(kontrollitav fail);
+		if(in_array($fileInfo["mime"], $photoFileTypes)){ ...
+		
+	Loomulikult peaks see funktsioon siis ka selle klassis kasutatava failitüübi muutuja väärtuse andma. Nii ei ole klassile failitüüpi enam vaja saata.
+	
+* kontroll, kas on lubatud suurusega.
+	Soovitan selleks public funktsioonile saata muutujana lubatud suuruse.
+	
+* kontroll, ega faili pole juba olemas. Sellele funktsioonile tuleks ka saata failinimi. Siinjuures arvan, et ega seda funktsiooni peagi tegelikkuses kasutama, tänu ajatemplile tulevad meie failinimed nagunii erinevad.
+
+* failinime loomine.
+	Mina teeks avaliku funktsiooni, mis soovi korral saadetud nime eesliidet (prefix) kasutab ja nime ajatempliga kokku paneb. Võib lisada veel ka nime järelliite (sufix), et kui saadetakse, siis kasutatakse. Failinime annaks klassi public muutuja väärtuseks.
+	Failide salvestamise funktsioonidele saab nii saata näiteks mingi muu nime (kui vaja) või ka klassi avaliku muutuja väärtuse - paindlik.
+	
+Ja loomulikult oleks aeg need muutujad, mille väärtusteks on erinevate foto kataloogide nimed, pildifailide nime eesliide (ja ka järelliide), lubatud pildifailide suurus, tõsta config faili. Tegelikult oleks kõige targem teha lausa näiteks config_photo.php fail ja seda kasutada neil lehtedel, kus fotodega tegemist.
+
+Jõudu!
