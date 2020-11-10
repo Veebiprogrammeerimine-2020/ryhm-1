@@ -3,6 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Veebiprogrammeerimine</title>
+  
+  <?php
+	if(isset($tolink)){
+		echo $tolink;
+	}
+  ?>
+  
   <style>
   <?php
     echo "body { \n";

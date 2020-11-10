@@ -4,6 +4,8 @@
   require("../../../../config_vp2020.php");
   require("fnc_photo.php");
   
+  $tolink = '<link rel="stylesheet" type="text/css" href="style/gallery.css">' ."\n";
+  
   $notice = null;
   $photouploaddir_orig = "../photoupload_orig/";
   $photouploaddir_normal = "../photoupload_normal/";

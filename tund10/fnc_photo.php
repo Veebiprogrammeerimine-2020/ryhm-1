@@ -53,11 +53,15 @@
 		$stmt->execute();
 		$temphtml = null;
 		while($stmt->fetch()){
-			//<img src="failinimi.laiend" alt="alternatiivtekst">
-			$temphtml .= '<img src="' .$GLOBALS["photouploaddir_thumb"] .$filenamefromdb .'" alt="' .$alttextfromdb .'">' ."\n";
+			//<div class="thumbgallery">
+			//<img src="failinimi.laiend" alt="alternatiivtekst" class="thumbs">
+			//</div>
+			$temphtml .= '<div class="thumbgallery">' ."\n";
+			$temphtml .= '<img src="' .$GLOBALS["photouploaddir_thumb"] .$filenamefromdb .'" alt="' .$alttextfromdb .'"  class="thumbs">' ."\n";
+			$temphtml .= "</div> \n";
 		}
 		if(!empty($temphtml)){
-			$photohtml = "<div> \n" .$temphtml . "\n </div> \n";
+			$photohtml = '<div class="galleryarea">' ."\n" .$temphtml . "\n </div> \n";
 		} else {
 			$photohtml = "<p>Kahjuks galeriipilte ei leitud!</p> \n";
 		}
