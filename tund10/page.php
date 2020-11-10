@@ -1,6 +1,8 @@
 <?php
   //käivitan sessiooni
-  session_start();
+  //session_start();
+  require("classes/SessionManager.class.php");
+  SessionManager::sessionStart("vp", 0, "/~rinde/", "greeny.cs.tlu.ee");
   //$username = "Andrus Rinde";
   require("../../../../config_vp2020.php");
   require("fnc_common.php");
