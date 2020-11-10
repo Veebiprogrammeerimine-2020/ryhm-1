@@ -39,6 +39,7 @@
 	<li><a href="listfilmpersons.php">Filmitegelased</a></li>
 	<li><a href="userprofile.php">Minu kasutajaprofiil</a></li>
 	<li><a href="photoupload.php">Galeriipiltide üleslaadimine</a></li>
+	<li><a href="photogallery_public.php">Avalike fotode galerii</a></li>
   </ul>
   
   <hr>
