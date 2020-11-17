@@ -36,6 +36,19 @@
     <li><a href="home.php">Avaleht</a></li>
   </ul>
   
+  <!--Modaalaken fotogalerii jaoks-->
+  <div id="modalarea" class="modalarea">
+	<!--sulgemisnupp-->
+	<span id="modalclose" class="modalclose">&times;</span>
+	<!--pildikoht-->
+	<div class="modalhorizontal">
+		<div class="modalvertical">
+			<p id="modalcaption"></p>
+			<img src="../img/empty.png" alt="galeriipilt">
+		</div>
+	</div>
+  </div>
+  
   <hr>
   <h2>Fotogalerii</h2>
   <p>
