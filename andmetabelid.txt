@@ -9,3 +9,6 @@ CREATE TABLE `if20_rinde_1`.`vpuserprofiles` ( `vpuserprofiles_id` INT(11) NOT N
 
 Fotod
 CREATE TABLE `if20_rinde_1`.`vpphotos` ( `vpphotos_id` INT(11) NOT NULL AUTO_INCREMENT , `userid` INT(11) NOT NULL , `filename` VARCHAR(40) NOT NULL , `created` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP , `alttext` VARCHAR(256) NULL , `privacy` INT(1) NOT NULL , `deleted` DATE NULL , PRIMARY KEY (`vpphotos_id`)) ENGINE = InnoDB;
+
+Piltide hinnete tabel
+CREATE TABLE `if20_rinde_1`.`vpphotoratings` ( `vpphotoratings_id` INT(11) NOT NULL AUTO_INCREMENT , `photoid` INT(11) NOT NULL , `userid` INT(11) NOT NULL , `rating` INT(1) NOT NULL , `added` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`vpphotoratings_id`)) ENGINE = InnoDB;
