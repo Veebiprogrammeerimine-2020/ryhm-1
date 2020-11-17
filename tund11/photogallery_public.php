@@ -5,6 +5,7 @@
   require("fnc_photo.php");
   
   $tolink = '<link rel="stylesheet" type="text/css" href="style/gallery.css">' ."\n";
+  $tolink .= '<link rel="stylesheet" type="text/css" href="style/modal.css">' ."\n";
   
   $notice = null;
   $photouploaddir_orig = "../photoupload_orig/";
