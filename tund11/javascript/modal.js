@@ -13,14 +13,14 @@ window.onload = function(){
 		allThumbs[i].addEventListener("click", openModal);
 	}
 	document.getElementById("modalclose").addEventListener("click", closeModal);
-	//document.getElementById("storerating").addEventListener("click", storeRating);
+	document.getElementById("storeRating").addEventListener("click", storeRating);
 }
 
 function openModal(e){
-	/*document.getElementById("avgrating").innerHTML = "";
+	document.getElementById("avgRating").innerHTML = "";
 	for(let i = 1; i < 6; i ++){
 		document.getElementById("rate" + i).checked = false;
-	}*/
+	}
 	//modalimg.src = photodir + e.target.dataset.fn;
 	modalimg.src = "showphoto.php?photo=" + e.target.dataset.fn;
 	
@@ -33,3 +33,29 @@ function openModal(e){
 function closeModal(){
 	modal.style.display = "none";
 }
+
+function storeRating(){
+	let rating = 0;
+	for(let i = 1; i < 6; i ++){
+		if(document.getElementById("rate" + i).checked){
+			rating = i;
+		}
+	}
+	if(rating > 0){
+		//AJAX
+		let webrequest = new XMLHttpRequest();
+		webrequest.onreadystatechange = function(){
+			if(this.readyState == 4 && this.status == 200){
+				//nüüd see, mis õnnestumise korral tehakse
+				document.getElementById("avgRating").innerHTML = "Keskmine hinne: " + this.responseText;
+			}
+		};
+		webrequest.open("GET", "storePhotoRating.php?rating=" + rating + "&photoid=" + photoid, true);
+		webrequest.send();
+		//AJAX lõppeb
+	}
+}
+
+
+
+
