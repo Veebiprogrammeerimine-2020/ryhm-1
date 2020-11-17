@@ -13,15 +13,16 @@ window.onload = function(){
 		allThumbs[i].addEventListener("click", openModal);
 	}
 	document.getElementById("modalclose").addEventListener("click", closeModal);
-	document.getElementById("storerating").addEventListener("click", storeRating);
+	//document.getElementById("storerating").addEventListener("click", storeRating);
 }
 
 function openModal(e){
-	document.getElementById("avgrating").innerHTML = "";
+	/*document.getElementById("avgrating").innerHTML = "";
 	for(let i = 1; i < 6; i ++){
 		document.getElementById("rate" + i).checked = false;
-	}
-	modalimg.src = photodir + e.target.dataset.fn;
+	}*/
+	//modalimg.src = photodir + e.target.dataset.fn;
+	modalimg.src = "showphoto.php?photo=" + e.target.dataset.fn;
 	
 	photoid = e.target.dataset.id;
 	modalimg.alt = e.target.alt;

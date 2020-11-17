@@ -46,10 +46,10 @@
 		$skip = ($page - 1) * $limit;
 		$conn = new mysqli($GLOBALS["serverhost"], $GLOBALS["serverusername"], $GLOBALS["serverpassword"], $GLOBALS["database"]);
 		//$stmt = $conn->prepare("SELECT filename, alttext FROM vpphotos WHERE privacy >= ? AND deleted IS NULL ORDER BY vpphotos_id DESC LIMIT ?");
-		$stmt = $conn->prepare("SELECT filename, alttext FROM vpphotos WHERE privacy >= ? AND deleted IS NULL ORDER BY vpphotos_id DESC LIMIT ?,?");
+		$stmt = $conn->prepare("SELECT vpphotos_id, filename, alttext FROM vpphotos WHERE privacy >= ? AND deleted IS NULL ORDER BY vpphotos_id DESC LIMIT ?,?");
 		echo $conn->error;
 		$stmt->bind_param("iii", $privacy, $skip, $limit);
-		$stmt->bind_result($filenamefromdb, $alttextfromdb);
+		$stmt->bind_result($idfromdb, $filenamefromdb, $alttextfromdb);
 		$stmt->execute();
 		$temphtml = null;
 		while($stmt->fetch()){
@@ -57,11 +57,11 @@
 			//<img src="failinimi.laiend" alt="alternatiivtekst" class="thumbs">
 			//</div>
 			$temphtml .= '<div class="thumbgallery">' ."\n";
-			$temphtml .= '<img src="' .$GLOBALS["photouploaddir_thumb"] .$filenamefromdb .'" alt="' .$alttextfromdb .'"  class="thumbs">' ."\n";
+			$temphtml .= '<img src="' .$GLOBALS["photouploaddir_thumb"] .$filenamefromdb .'" alt="' .$alttextfromdb .'"  class="thumbs" data-fn="' .$filenamefromdb .'" data-id="' .$idfromdb .'">' ."\n";
 			$temphtml .= "</div> \n";
 		}
 		if(!empty($temphtml)){
-			$photohtml = '<div class="galleryarea">' ."\n" .$temphtml . "\n </div> \n";
+			$photohtml = '<div id="galleryarea" class="galleryarea">' ."\n" .$temphtml . "\n </div> \n";
 		} else {
 			$photohtml = "<p>Kahjuks galeriipilte ei leitud!</p> \n";
 		}

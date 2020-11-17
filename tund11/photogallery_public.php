@@ -6,6 +6,7 @@
   
   $tolink = '<link rel="stylesheet" type="text/css" href="style/gallery.css">' ."\n";
   $tolink .= '<link rel="stylesheet" type="text/css" href="style/modal.css">' ."\n";
+  $tolink .= '<script src="javascript/modal.js" defer></script>' ."\n";
   
   $notice = null;
   $photouploaddir_orig = "../photoupload_orig/";
@@ -45,7 +46,7 @@
 	<div class="modalhorizontal">
 		<div class="modalvertical">
 			<p id="modalcaption"></p>
-			<img src="../img/empty.png" alt="galeriipilt">
+			<img id="modalimg" src="../img/empty.png" alt="galeriipilt">
 		</div>
 	</div>
   </div>
