@@ -11,11 +11,28 @@
   $inputerror = "";
   $notice = null;
   $news = null;
+  $newstitle = null;
   
     
   //kui klikiti submit, siis ...
   if(isset($_POST["newssubmit"])){
+	if(strlen($_POST["newstitleinput"]) == 0){
+		$inputerror = "Uudise pealkiri on puudu!";
+	} else {
+		$newstitle = test_input($_POST["newstitleinput"]);
+	}
+	if(strlen($_POST["newsinput"]) == 0){
+		$inputerror .= " Uudise sisu on puudu!";
+	} else {
+		$news = test_input($_POST["newsinput"]);
+		//htmlspecialchars teisendab html noolsulud.
+		//nende tagasisaamiseks htmlspecialchars_decode(uudis)
+	}
 	
+	if(empty($inputerror)){
+		//uudis salvestada
+		
+	}
   }
   
   require("header.php");
@@ -33,7 +50,7 @@
   
   <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data">
     <label for="newstitleinput">Sisesta uudise pealkiri</label>
-	<input id="newstitleinput" name="newstitleinput" type="text" required>
+	<input id="newstitleinput" name="newstitleinput" type="text" value="<?php echo $newstitle; ?>" required>
 	<br>
 	<label for="newsinput">Kirjuta uudis</label>
 	<textarea id="newsinput" name="newsinput"><?php echo $news; ?></textarea>
