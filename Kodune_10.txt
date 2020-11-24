@@ -1,0 +1,12 @@
+Kodune 9 on Google Drive's ja seal on ka käesolev ülesanne olemas.
+
+Täiendage uudise lisamise lehte:
+Lisage uudiste salvestamine andmebaasi
+Lisage ka aegumistähtaja määramine
+
+Tekitage abalehele (page.php) uudiste osa. Seal näidake näiteks viit värskeimat uudist.
+
+Täiendage uudiste lisamist, koos uudisega peab saama üles laadida ka fotot. Suuruseks 600X400 (täpselt).
+Selleks uudisepiltide andmetabel ja uudiste tabelisse uus väli foto id jaoks.
+
+Avalehel näidake uudisega koos ka fotot!
