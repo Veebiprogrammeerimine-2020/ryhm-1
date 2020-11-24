@@ -1,6 +1,6 @@
 <?php
-	require("usesession.php");
-	
+	require("usesession.php");  //see rikkus osadel tudengitel töö ära!?
+	$dir = "../photoupload_normal/";
 	header("Content-type: image/jpeg");
-	readfile("../photoupload_normal/" .$_REQUEST["photo"]);
+	readfile($dir .$_REQUEST["photo"]);
 	
