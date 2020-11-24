@@ -12,3 +12,6 @@ CREATE TABLE `if20_rinde_1`.`vpphotos` ( `vpphotos_id` INT(11) NOT NULL AUTO_INC
 
 Piltide hinnete tabel
 CREATE TABLE `if20_rinde_1`.`vpphotoratings` ( `vpphotoratings_id` INT(11) NOT NULL AUTO_INCREMENT , `photoid` INT(11) NOT NULL , `userid` INT(11) NOT NULL , `rating` INT(1) NOT NULL , `added` DATE NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`vpphotoratings_id`)) ENGINE = InnoDB;
+
+Uudiste tabel
+CREATE TABLE `if20_rinde_1`.`vpnews` ( `vpnews_id` INT(11) NOT NULL AUTO_INCREMENT , `userid` INT(11) NOT NULL , `title` VARCHAR(140) NOT NULL , `content` VARCHAR(2000) NOT NULL , `expire` DATE NOT NULL , `added` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , `deleted` DATETIME NULL , PRIMARY KEY (`vpnews_id`)) ENGINE = InnoDB;
