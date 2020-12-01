@@ -1,0 +1,18 @@
+.newsblock{
+	background-color: #FAFAFA;
+	margin: 5px;
+	padding: 5px;
+}
+
+.newsblock img {
+	float: left;
+	margin-right: 10px;
+}
+
+.newsblock{
+	clear: both;
+}
+
+.fullheightnews {
+	min-height: 400px;
+}

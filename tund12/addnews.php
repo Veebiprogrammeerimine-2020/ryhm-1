@@ -24,6 +24,7 @@
 	if(strlen($_POST["newsinput"]) == 0){
 		$inputerror .= " Uudise sisu on puudu!";
 	} else {
+		echo $_POST["newsinput"];
 		$news = test_input($_POST["newsinput"]);
 		//htmlspecialchars teisendab html noolsulud.
 		//nende tagasisaamiseks htmlspecialchars_decode(uudis)
@@ -31,7 +32,7 @@
 	
 	if(empty($inputerror)){
 		//uudis salvestada
-		
+		echo $news;
 	}
   }
   
